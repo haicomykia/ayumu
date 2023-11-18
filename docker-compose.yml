@@ -1,0 +1,18 @@
+version: '3'
+services:
+  php:
+    image: php:8.2-apache
+    ports:
+      - 8080:80
+    volumes:
+      - ./html:/var/www/html
+  mysql:
+    image: mysql:8.2
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ayumu
+      MYSQL_USER: user
+      MYSQL_PASSWORD: admin
+    command: mysqld --character-set-server=utf8 --default-time-zone=Asia/Tokyo
