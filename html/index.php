@@ -9,7 +9,7 @@
 <body>
   <form action="" method="post" enctype="multipart/form-data">
     <input type="file" name="files" id="files" multiple accept="image/*, .pdf">
-    <input type="submit" value="Send">
+    <input type="button" value="送信" id="send">
   </form>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="./index.js"></script>
