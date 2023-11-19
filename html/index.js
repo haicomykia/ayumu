@@ -8,8 +8,18 @@ $(document).ready(function(){
 $("#files").on('input', function(e){
   const fd = new FormData();
   for (let i = 0; i < this.files.length; i++) {
-    fd.append('files', this.files[i]);
+    fd.append(`file_${i}`, this.files[i]);
   }
 
-  console.log([...fd.entries()]);
+  $.ajax({
+    url: 'upload.php',
+    type: 'POST',
+    data: fd,
+    contentType: false,
+    processData: false
+  }).done(function(result){
+    console.log(result);
+  }).fail(function(){
+
+  });
 });
